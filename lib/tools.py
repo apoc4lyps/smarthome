@@ -93,5 +93,8 @@ class Tools():
         rhov = 100000 / (287.0 * (1 - mix) + 462.0 * mix) / t
         return mix * rhov * 1000
 
+    def statusbyte(self, x, n):
+        return x & 2**n != 0
+
     def runtime(self):
         return datetime.datetime.now() - self._start
